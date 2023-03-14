@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable, avoid_print, use_build_context_synchronously, non_constant_identifier_names, prefer_const_constructors_in_immutables, unused_local_variable
 
-import 'package:chat_app/screens/cubits/signup_cubit/signup_cubit.dart';
+import 'package:chat_app/screens/cubits/auth_cubit/auth_cubit.dart';
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
+    return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignupLoading) {
           isLoading = true;
@@ -105,7 +105,7 @@ class SignupScreen extends StatelessWidget {
                           text: 'SIGNUP',
                           onTap: () async {
                             if (formkey.currentState!.validate()) {
-                              BlocProvider.of<SignupCubit>(context).signupUser(
+                              BlocProvider.of<AuthCubit>(context).signupUser(
                                   email: email!, password: password!);
                             } else {}
                           },
