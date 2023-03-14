@@ -71,11 +71,11 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                           onPressed: () {
                             if (messageController.text.isNotEmpty) {
-                              messages.add({
-                                kMessage: messageController.text,
-                                kCreatedAt: DateTime.now(),
-                                'id': email,
-                              });
+                              // messages.add({
+                              //   kMessage: messageController.text,
+                              //   kCreatedAt: DateTime.now(),
+                              //   'id': email,
+                              // });
                               messageController.clear();
                               _controller.animateTo(
                                 _controller.position.minScrollExtent,
