@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:chat_app/models/message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,7 +19,9 @@ class ChatCubit extends Cubit<ChatState> {
     try {
       messages
           .add({kMessage: message, kCreatedAt: DateTime.now(), 'id': email});
-    } on Exception {}
+    } on Exception {
+      print('error');
+    }
   }
 
   void getMessages() {

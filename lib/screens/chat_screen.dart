@@ -1,10 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable, avoid_print
 
-import 'package:chat_app/constants/colors.dart';
-import 'package:chat_app/models/message.dart';
 import 'package:chat_app/screens/cubits/chat_cubit/chat_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widgets/chat_buble.dart';
