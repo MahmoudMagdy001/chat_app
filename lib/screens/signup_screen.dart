@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable, avoid_print, use_build_context_synchronously, non_constant_identifier_names, prefer_const_constructors_in_immutables, unused_local_variable
 
-import 'package:chat_app/screens/chat_screen.dart';
 import 'package:chat_app/screens/cubits/signup_cubit/signup_cubit.dart';
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';

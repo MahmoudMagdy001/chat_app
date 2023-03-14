@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable, avoid_print, use_build_context_synchronously, non_constant_identifier_names, prefer_const_constructors_in_immutables, unused_local_variable
 
 import 'package:chat_app/screens/chat_screen.dart';
+import 'package:chat_app/screens/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chat_app/screens/cubits/login_cubit/login_cubit.dart';
 import 'package:chat_app/screens/signup_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -31,7 +31,8 @@ class LoginScreen extends StatelessWidget {
         if (state is LoginLoading) {
           isLoading = true;
         } else if (state is LoginSuccess) {
-          Navigator.pushNamed(context, ChatScreen.id);
+          BlocProvider.of<ChatCubit>(context).getMessages();
+          Navigator.pushNamed(context, ChatScreen.id, arguments: email);
           isLoading = false;
         } else if (state is LoginError) {
           showSnakBar(context, state.errorMessage);
