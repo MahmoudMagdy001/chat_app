@@ -17,9 +17,11 @@ class ChatScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
+        elevation: 5.0,
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
+        automaticallyImplyLeading: false,
+        title: Text('CHAT'),
       ),
       body: Column(
         children: [
